@@ -1,0 +1,1 @@
+Hi guys, this project is about a website a coffee shop. It's not finished yet... suggestions welcome!
