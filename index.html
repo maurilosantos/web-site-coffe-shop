@@ -1,41 +1,63 @@
-<html>
-    <head>
-        <title>StarLord Coffee</title> 
-        <link href="CSS/style.css" rel="stylesheet" />
-        <meta nome="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive Web Design ViewPort-->
+    <title>Responsive Landing page cafeteria</title>
+</head>
+<body> 
+    <section>
+        <div class="círculo"></div>
         <header>
-            <div class="center">
-                <div class="logo"><img src="assets/logo.png" width="120px"> </div><!-- imagem no logo -->
-                <nav class="menu">
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Menu</a>
-                    <a href="#">What's New</a>
+        <a href="#"><img src="./assets/logo.png" class="logo"></a>
+        <div class="toggle" onclick="toggleMenu()";></div>
 
-                </nav><!-- menu-->
+        <ul class="navigation">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Novidades</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        </header>
+        <div class="conteúdo">
+            <div class="textBox">
+                 <h2>Não é apenas um Café <br>É um <span>Starbucks</span></h2>
+                 <p>Um novo conceito, um café suave e agressivo.
+                 Seja quente ou gelado, revoluciona o sabor do café que você está acostumado a beber.
+                 Apresento a vocês não apenas uma bebida, mas uma experiência.</p>
+                 <button href="#">Saiba Mais</button>
             </div>
-        </header><!-- center -->
-        <section class="sobre">
-            <div class="extras">
-                <img src="assets/png1.png" width="300px"/>
-                <div class="social-media">
-                    <a href="#"><img src="assets/facebook.png" width="30px"> </a>
-                    <a href="#"><img src="assets/instagram.png" width="30px"> </a>
-                    <a href="#"><img src="assets/twitter.png" width="30px"> </a>
-                </div>
-
-            </div><!--extras-->
-            <div class="center">
-                <div class="texto-sobre">
-                    <h1>It's not just bucks Coffe<br/> It's <span style="color: #007042">StarLord</span>.</h1>
-                    <p>A new concept, a soft and aggressive coffee. Whether iced or cold, it will revolutionize the taste of the coffee you are used to drinking. I present to you not only a drink but an experience.</p>
-                    <button>Read more</button>
-                
-                </div>
-            </div>
-        </section>
-         
-    </body>
+                 <div class="ImgBox">
+                    <img src="./assets/img1.png" class="starbucks">
+                 </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="./assets/thumb1.png" onclick="MudaImg('./assets/img1.png'); mudaCorCircle('#017143')"></li>
+            <li><img src="./assets/thumb2.png" onclick="MudaImg('./assets/img2.png'); mudaCorCircle('#eb7495')"></li>
+            <li><img src="./assets/thumb3.png" onclick="MudaImg('./assets/img3.png'); mudaCorCircle('#d752b1')"></li>
+        </ul>
+        <ul class="social">
+            <li><a href="#"><img src="./assets/facebook.png"></a></li>
+            <li><a href="#"><img src="./assets/twitter.png"></a></li>
+            <li><a href="#"><img src="./assets/instagram.png"></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function MudaImg(clique){
+            document.querySelector('.starbucks').src = clique
+        }
+        function mudaCorCircle(cor){
+            const circle = document.querySelector('.círculo');
+            circle.style.background = cor;
+        }
+        
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+</body>
 </html>
